@@ -51,7 +51,7 @@ with open("README.md") as f:
 
 setup(
     name="torchsort",
-    version="0.1.9",
+    version="0.1.9" + os.getenv("TORCHSORT_VERSION_SUFFIX", ""),
     description="Differentiable sorting and ranking in PyTorch",
     author="Teddy Koker",
     url="https://github.com/teddykoker/torchsort",
@@ -67,8 +67,8 @@ setup(
     extras_require={
         "testing": [
             "pytest",
-            "torch",
-            "fast_soft_sort @ git+https://github.com/google-research/fast-soft-sort.git@c3110360d7c94c42027865c71b23e46fa22151e2",
+            # "torch",
+            "fast_soft_sort @ git+https://github.com/google-research/fast-soft-sort.git@6a52ce79869ab16e1e0f39149a84f50f8ad648c5",
         ],
     },
     ext_modules=ext_modules(),
